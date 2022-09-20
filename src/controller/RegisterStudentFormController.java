@@ -93,9 +93,6 @@ public class RegisterStudentFormController {
         gender.add("other");
         cmbGender.setItems(gender);
 
-
-
-
         cmdCourse.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             /*for (CourseDTO c : allCourses) {
                 if (newValue.equals(c.getProgram())){
@@ -103,28 +100,9 @@ public class RegisterStudentFormController {
                 }
             }*/
         });
-
-
-
-       /* hashmapDataSet();*/
-
-
     }
 
-
-   /* private void hashmapDataSet() {
-        hashMap.put(txtStudentId,idPattern);
-        hashMap.put(txtName,namePattern);
-        hashMap.put(txtNIC,nicPattern);
-        hashMap.put(txtdateOfBirth,dateOfBirthPattern);
-        hashMap.put(txtParent,parentNamePattern);
-        hashMap.put(txtContact,phoneNumberPattern);
-        // hashMap.put(txtAddress,addressPattern);
-
-    }*/
-
-
-    public void registerStudentOnAction(ActionEvent actionEvent) {
+    public void registerStudentOnAction(ActionEvent actionEvent) throws ClassNotFoundException {
 
              RegisterStudent registerStudent=new RegisterStudent();
              registerStudent.setId(txtStudentId.getText());
@@ -138,7 +116,7 @@ public class RegisterStudentFormController {
              registerStudent.setCourse(String.valueOf(cmdCourse.getValue()));
 
         for (IntakeDetails intakeDetails : intake) {
-            if (intakeDetails.getIntake_id().equalsIgnoreCase(String.valueOf(cmbIntake.getValue()))){
+            if (intakeDetails.getDesc().equalsIgnoreCase(String.valueOf(cmbIntake.getValue()))){
                 registerStudent.setIntake(String.valueOf(intakeDetails.getIntake_id()));
             }
         }
@@ -147,6 +125,8 @@ public class RegisterStudentFormController {
         try {
             if(registerStudent(registerStudent)){
                 new Alert(Alert.AlertType.CONFIRMATION,"Sudent Register Completed..").showAndWait();
+                txtStudentId.setText(autoGenarateStudentId());
+                txtRegisterId.setText(autoGenarateRegisterId());
             }else {
                 new Alert(Alert.AlertType.WARNING,"Registration Fail..").showAndWait();
             }
@@ -278,27 +258,8 @@ public class RegisterStudentFormController {
 
 
 
-
-
-      /*  if (txtStudentId.getText().isEmpty()){
-            new Alert(Alert.AlertType.WARNING,"Fail").showAndWait();
-        }else {
-            registerStudentBO.registerStudent(studentDTO);
-            new Alert(Alert.AlertType.CONFIRMATION,"Student Regiter Complete").showAndWait();
-        }*/
-
-
-
-
-
     public void textField_KeyReleased(KeyEvent keyEvent) {
-       /* Object response = ValidationUtil.validate(hashMap,btnRegister);
-        if (keyEvent.getCode()== KeyCode.ENTER) {
-            if(response instanceof TextField){
-                TextField textField= (TextField) response;
-                textField.requestFocus();
-            }
-        }*/
+
 
     }
 }
