@@ -33,6 +33,7 @@ public class RegisterStudentFormController {
     public TextField txtBatchNumber;
     public TextField txtRegisterId;
     public TextField txtPayment;
+    public JFXComboBox cmbIntake;
     Pattern idPattern = Pattern.compile("^[0-9]{1,4}$");
     Pattern namePattern = Pattern.compile("^[A-z]*[ ]?[A-z]*[ ]?[A-z]$");
     Pattern nicPattern = Pattern.compile("^[0-9]{9}[V,v]|[0-9]{12}$");
@@ -51,11 +52,17 @@ public class RegisterStudentFormController {
         ObservableList<String> courseIdList=FXCollections.observableArrayList();
 
         try {
+            Connection connection = DbConnection.getInstance().getConnection();
+
+
             txtStudentId.setText(autoGenarateStudentId());
             txtRegisterId.setText(autoGenarateRegisterId());
+            ObservableList<String> intake=FXCollections.observableArrayList();
+            connection.prepareStatement("SELECT ")
 
 
-            Connection connection = DbConnection.getInstance().getConnection();
+
+
             PreparedStatement stm = connection.prepareStatement("SELECT course_id FROM Course");
             ResultSet resultSet = stm.executeQuery();
             while (resultSet.next()){

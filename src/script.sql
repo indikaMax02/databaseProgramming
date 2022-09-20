@@ -127,8 +127,8 @@ VALUES ('C001','GDSE',300000,'2 years','S001'),
 SELECT * FROM Course;
 
 INSERT INTO Intake(intake_id,start_date,intakeCol,description,course_id)
-VALUES ('IN001','2023-01-01','EMPTY','this is best way in software Engineering','C001'),
-       ('IN002','2023-01-06','EMPTY','web development and develop skill in course','C002');
+VALUES ('IN001','2023-01-01','EMPTY','GDSE batch58','C001'),
+       ('IN002','2023-01-06','EMPTY','CMJD batch61','C002');
 SELECT * FROM Intake;
 
 
