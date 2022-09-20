@@ -11,6 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import model.IntakeDetails;
 import model.RegisterStudent;
 import model.Student;
 
@@ -46,6 +47,9 @@ public class RegisterStudentFormController {
     RegisterStudentBO registerStudentBO =(RegisterStudentBO) BoFactory.getBOFactory().getBO(BoFactory.BoTypes.REGISTER_STUDENT);
 
     List<CourseDTO> allCourses = registerStudentBO.getAllCourses();*/
+
+    ObservableList<IntakeDetails> intake=FXCollections.observableArrayList();
+    ObservableList<String> intakeDesc=FXCollections.observableArrayList();
     public void initialize() {
 
 
@@ -58,13 +62,14 @@ public class RegisterStudentFormController {
             txtStudentId.setText(autoGenarateStudentId());
             txtRegisterId.setText(autoGenarateRegisterId());
 
-            ObservableList<String> intake=FXCollections.observableArrayList();
-            PreparedStatement stm1 = connection.prepareStatement("SELECT description FROM Intake");
+
+            PreparedStatement stm1 = connection.prepareStatement("SELECT intake_id,description FROM Intake");
             ResultSet resultSet1 = stm1.executeQuery();
             while (resultSet1.next()){
-                intake.add(resultSet1.getString("description"));
+                intake.add(new IntakeDetails(resultSet1.getString("intake_id"),resultSet1.getString("description")));
+                intakeDesc.add(resultSet1.getString("description"));
             }
-            cmbIntake.setItems(intake);
+            cmbIntake.setItems(intakeDesc);
 
 
             PreparedStatement stm = connection.prepareStatement("SELECT course_id FROM Course");
@@ -135,7 +140,12 @@ public class RegisterStudentFormController {
              registerStudent.setAddress(txtAddress.getText());
              registerStudent.setNic(txtNIC.getText());
              registerStudent.setCourse(String.valueOf(cmdCourse.getValue()));
-             registerStudent.setIntake(txtBatchNumber.getText());
+
+        for (IntakeDetails intakeDetails : intake) {
+            if (intakeDetails.getIntake_id().equalsIgnoreCase(String.valueOf(cmbIntake.getValue()))){
+                registerStudent.setIntake(String.valueOf(intakeDetails.getIntake_id()));
+            }
+        }
              registerStudent.setPayment(Double.parseDouble(txtPayment.getText()));
 
         try {
