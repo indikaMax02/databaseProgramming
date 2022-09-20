@@ -43,10 +43,6 @@ public class RegisterStudentFormController {
     Pattern phoneNumberPattern = Pattern.compile("^[0]{1}[7][0|1|2|4|5|6|7|8|0][0-9]{7}$");
     Pattern addressPattern = Pattern.compile("^[A-z, .0-9/]*$");
 
-   /* LinkedHashMap<TextField,Pattern> hashMap=new LinkedHashMap<>();
-    RegisterStudentBO registerStudentBO =(RegisterStudentBO) BoFactory.getBOFactory().getBO(BoFactory.BoTypes.REGISTER_STUDENT);
-
-    List<CourseDTO> allCourses = registerStudentBO.getAllCourses();*/
 
     ObservableList<IntakeDetails> intake=FXCollections.observableArrayList();
     ObservableList<String> intakeDesc=FXCollections.observableArrayList();
