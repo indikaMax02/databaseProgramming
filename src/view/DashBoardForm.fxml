@@ -67,7 +67,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="manageCoursePane" onMouseClicked="#ManageCourseOnAction" prefHeight="39.0" prefWidth="189.0" styleClass="navOption1">
+            <Pane fx:id="manageStudentPane" onMouseClicked="#manageStudentOnAction" prefHeight="39.0" prefWidth="189.0" styleClass="navOption1">
                <effect>
                   <DropShadow color="#0000005b" height="24.72" offsetY="2.0" radius="5.68" width="0.0" />
                </effect>
@@ -75,7 +75,7 @@
                   <Insets top="20.0" />
                </opaqueInsets>
                <children>
-                  <Label layoutX="46.0" layoutY="11.0" prefHeight="17.0" prefWidth="129.0" text="MANAGE COURSE" textFill="WHITE">
+                  <Label layoutX="45.0" layoutY="11.0" prefHeight="17.0" prefWidth="129.0" text="MANAGE STUDENT" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="14.0" />
                      </font>
@@ -90,7 +90,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Pane>
-            <Pane fx:id="manageStudentPane" onMouseClicked="#manageStudentOnAction" prefHeight="39.0" prefWidth="189.0" styleClass="navOption1">
+            <Pane fx:id="manageCoursePane" onMouseClicked="#ManageCourseOnAction" prefHeight="39.0" prefWidth="189.0" styleClass="navOption1">
                <effect>
                   <DropShadow color="#0000005b" height="24.72" offsetY="2.0" radius="5.68" width="0.0" />
                </effect>
@@ -98,7 +98,7 @@
                   <Insets top="20.0" />
                </opaqueInsets>
                <children>
-                  <Label layoutX="45.0" layoutY="11.0" prefHeight="17.0" prefWidth="129.0" text="MANAGE STUDENT" textFill="WHITE">
+                  <Label layoutX="46.0" layoutY="11.0" prefHeight="17.0" prefWidth="129.0" text="MANAGE COURSE" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="14.0" />
                      </font>
