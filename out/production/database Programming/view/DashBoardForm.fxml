@@ -113,6 +113,26 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Pane>
+            <Pane fx:id="manageStudentPane1" onMouseClicked="#manageStudentOnAction" prefHeight="39.0" prefWidth="189.0" styleClass="navOption1">
+               <effect>
+                  <DropShadow color="#0000005b" height="24.72" offsetY="2.0" radius="5.68" width="0.0" />
+               </effect>
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+               <children>
+                  <Label layoutX="45.0" layoutY="11.0" prefHeight="17.0" prefWidth="129.0" text="MANAGE TEACHER" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assests/images/register.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </VBox>
       <Pane layoutX="196.0" prefHeight="516.0" prefWidth="17.0" style="-fx-background-color: #f4f4f4;">
@@ -120,11 +140,12 @@
             <Pane layoutX="6.0" prefHeight="516.0" prefWidth="7.0" style="-fx-background-color: #02B2FE;" />
          </children>
       </Pane>
-      <Label layoutX="235.0" layoutY="11.0" stylesheets="@assests/styles/main-form.css" text="Sipsewana Institute" textFill="#0d00ff">
+      <Label layoutX="235.0" layoutY="11.0" stylesheets="@assests/styles/main-form.css" text="Student Management System" textFill="#0d00ff">
          <font>
             <Font name="Bullpen 3D" size="24.0" />
          </font>
       </Label>
       <StackPane fx:id="dashboardStackPane" layoutX="216.0" layoutY="55.0" prefHeight="457.0" prefWidth="733.0" />
+      <Separator layoutX="216.0" layoutY="45.0" prefHeight="3.0" prefWidth="733.0" />
    </children>
 </AnchorPane>
