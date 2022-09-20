@@ -57,10 +57,14 @@ public class RegisterStudentFormController {
 
             txtStudentId.setText(autoGenarateStudentId());
             txtRegisterId.setText(autoGenarateRegisterId());
+
             ObservableList<String> intake=FXCollections.observableArrayList();
-            connection.prepareStatement("SELECT ")
-
-
+            PreparedStatement stm1 = connection.prepareStatement("SELECT description FROM Intake");
+            ResultSet resultSet1 = stm1.executeQuery();
+            while (resultSet1.next()){
+                intake.add(resultSet1.getString("description"));
+            }
+            cmbIntake.setItems(intake);
 
 
             PreparedStatement stm = connection.prepareStatement("SELECT course_id FROM Course");

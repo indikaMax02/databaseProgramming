@@ -17,17 +17,10 @@
       <TableView fx:id="tblStudent" editable="true" layoutX="34.0" layoutY="135.0" prefHeight="283.0" prefWidth="665.0">
         <columns>
           <TableColumn prefWidth="114.0" text="Student_Id" />
-          <TableColumn prefWidth="142.0" text="Student_Name" />
-            <TableColumn prefWidth="115.0" text="nic" />
-            <TableColumn prefWidth="122.0" text="dateOfBirth" />
-            <TableColumn prefWidth="122.0" text="gender" />
-            <TableColumn prefWidth="122.0" text="parentName" />
-            <TableColumn prefWidth="122.0" text="mobile" />
-            <TableColumn prefWidth="122.0" text="address" />
-            <TableColumn prefWidth="122.0" text="ol_result" />
-            <TableColumn prefWidth="122.0" text="al_result" />
-            <TableColumn prefWidth="122.0" text="email" />
-            <TableColumn prefWidth="122.0" text="metaData" />
+          <TableColumn prefWidth="154.0" text="Student_Name" />
+            <TableColumn prefWidth="145.0" text="Email" />
+            <TableColumn prefWidth="108.0" text="contact" />
+            <TableColumn prefWidth="143.0" text="nic" />
         </columns>
       </TableView>
       <TextField fx:id="txtId" layoutX="33.0" layoutY="33.0" prefHeight="25.0" prefWidth="258.0" promptText="Search here" />
@@ -39,8 +32,9 @@
       <RadioButton fx:id="nameRadio" layoutX="77.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#nameRadioButtonOnMouseClicked" text="name" />
       <TableView layoutX="312.0" layoutY="29.0" prefHeight="96.0" prefWidth="387.0">
         <columns>
-          <TableColumn prefWidth="198.0" text="Student's Courses" />
-            <TableColumn prefWidth="198.0" text="Regiter Date" />
+          <TableColumn prefWidth="143.0" text="Student's Courses" />
+            <TableColumn minWidth="0.0" prefWidth="107.0" text="Regiter Date" />
+            <TableColumn minWidth="0.0" prefWidth="136.0" text="Intake" />
         </columns>
       </TableView>
    </children>

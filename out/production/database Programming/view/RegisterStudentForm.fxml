@@ -83,13 +83,13 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Pane>
-            <Pane prefHeight="45.0" prefWidth="319.0" styleClass="textFieldPane" stylesheets="@assests/styles/Manage-Student.css">
+            <Pane prefHeight="53.0" prefWidth="319.0" styleClass="textFieldPane" stylesheets="@assests/styles/Manage-Student.css">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
                <children>
                   <Label layoutX="14.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@assests/styles/Manage-Student.css" text="Intack Number" />
-                  <TextField fx:id="txtBatchNumber" layoutX="21.0" layoutY="9.0" onKeyReleased="#textField_KeyReleased" prefHeight="27.0" prefWidth="194.0" styleClass="textField" stylesheets="@assests/styles/Manage-Student.css" />
+                  <JFXComboBox fx:id="cmbIntake" layoutX="14.0" layoutY="6.0" prefHeight="34.0" prefWidth="285.0" promptText="intake " styleClass="combo-box" stylesheets="@assests/styles/Manage-Student.css" />
                </children>
             </Pane>
             <Pane prefHeight="34.0" prefWidth="225.0" styleClass="textFieldPane" stylesheets="@assests/styles/Manage-Student.css">
