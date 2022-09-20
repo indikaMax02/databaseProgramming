@@ -36,7 +36,7 @@ public class DashBoardFormController {
     public void registerOnAction(MouseEvent mouseEvent) throws IOException {
         clearPaneColor();
         regiterPane.setStyle("-fx-background-color: linear-gradient(to left top, #dcbcbc, #EE75FE)");
-        URL resource = getClass().getResource("../view/RegistorStudentForm.fxml");
+        URL resource = getClass().getResource("../view/RegisterStudentForm.fxml");
         Parent load = FXMLLoader.load(resource);
         dashboardStackPane.getChildren().clear();
         dashboardStackPane.getChildren().add(load);
